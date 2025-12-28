@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Cálido Rooftop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; }
+        .menu-item { border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+        .active-tab { color: #d97706; border-color: #d97706; }
+        .menu-section { animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="p-6 md:p-12">
+    <div class="max-w-2xl mx-auto">
+        <a href="index.html" class="text-gray-500 text-xs tracking-[0.2em] uppercase mb-10 block">← Back</a>
+        <h1 class="text-5xl font-serif mb-8">Our Menu</h1>
+
+        <div class="flex space-x-6 overflow-x-auto border-b border-white/10 mb-8 text-xs uppercase tracking-widest font-bold text-gray-500">
+            <button onclick="show('starters', this)" class="pb-3 active-tab border-b-2">Starters</button>
+            <button onclick="show('mexican', this)" class="pb-3 border-b-2 border-transparent">Mexican</button>
+            <button onclick="show('sushi', this)" class="pb-3 border-b-2 border-transparent">Sushi</button>
+        </div>
+
+        <div id="starters" class="menu-section space-y-6">
+            <div class="menu-item pb-4 flex justify-between">
+                <div><h4 class="font-bold">Beef Tataki</h4><p class="text-xs text-gray-500">Pepper crusted beef, honey soya</p></div>
+                <div class="text-amber-500">₦9,000</div>
+            </div>
+            <div class="menu-item pb-4 flex justify-between">
+                <div><h4 class="font-bold">Rock Shrimps</h4><p class="text-xs text-gray-500">Breaded shrimps, chilli mayo</p></div>
+                <div class="text-amber-500">₦7,500</div>
+            </div>
+        </div>
+
+        <div id="mexican" class="menu-section hidden space-y-6">
+            <div class="menu-item pb-4 flex justify-between">
+                <div><h4 class="font-bold">Beef Birria Taco</h4><p class="text-xs text-gray-500">Slow cooked beef, cilantro, cheese</p></div>
+                <div class="text-amber-500">₦7,500</div>
+            </div>
+            <div class="menu-item pb-4 flex justify-between">
+                <div><h4 class="font-bold">Shrimp Burrito</h4><p class="text-xs text-gray-500">Mexican rice, guac, sour cream</p></div>
+                <div class="text-amber-500">₦6,500</div>
+            </div>
+        </div>
+
+        <div id="sushi" class="menu-section hidden space-y-6">
+            <div class="menu-item pb-4 flex justify-between">
+                <div><h4 class="font-bold">Sake Teppanyaki</h4><p class="text-xs text-gray-500">Salmon, veg, egg fried rice</p></div>
+                <div class="text-amber-500">₦19,000</div>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center text-[10px] text-gray-600 tracking-widest uppercase">
+            + 10% Service Charge & 7.5% VAT
+        </div>
+    </div>
+
+    <script>
+        function show(id, btn) {
+            document.querySelectorAll('.menu-section').forEach(s => s.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+            document.querySelectorAll('button').forEach(b => b.classList.remove('active-tab', 'border-amber-500'));
+            btn.classList.add('active-tab', 'border-amber-500');
+        }
+    </script>
+</body>
+</html>
