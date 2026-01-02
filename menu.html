@@ -19,11 +19,19 @@
         <a href="index.html" class="text-gray-500 text-xs tracking-[0.2em] uppercase mb-10 block">← Back</a>
         <h1 class="text-5xl font-serif mb-8">Our Menu</h1>
 
-        <div class="flex space-x-6 overflow-x-auto border-b border-white/10 mb-8 text-xs uppercase tracking-widest font-bold text-gray-500">
-            <button onclick="show('starters', this)" class="pb-3 active-tab border-b-2">Starters</button>
-            <button onclick="show('mexican', this)" class="pb-3 border-b-2 border-transparent">Mexican</button>
-            <button onclick="show('sushi', this)" class="pb-3 border-b-2 border-transparent">Sushi</button>
+    <div class="relative mb-8">
+        <input type="text" placeholder="Search 100+ dishes..." class="w-full bg-white/5 border border-white/10 py-4 px-6 rounded-2xl text-sm focus:outline-none focus:border-amber-500 transition text-white">
+        <div class="absolute right-6 top-4 text-gray-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </div>
+    </div>
+
+    <div class="flex space-x-6 overflow-x-auto border-b border-white/10 mb-8 text-xs uppercase tracking-widest font-bold text-gray-500">
+        <button onclick="show('starters', this)" class="pb-3 active-tab border-b-2">Starters</button>
+        <button onclick="show('mexican', this)" class="pb-3 border-b-2 border-transparent">Mexican</button>
+        <button onclick="show('sushi', this)" class="pb-3 border-b-2 border-transparent">Sushi</button>
+        <button onclick="show('shisha', this)" class="pb-3 border-b-2 border-transparent">Shisha</button>
+    </div>
 
         <div id="starters" class="menu-section space-y-6">
             <div class="menu-item pb-4 flex justify-between">
@@ -53,7 +61,25 @@
                 <div class="text-amber-500">₦19,000</div>
             </div>
         </div>
-
+        <div id="shisha" class="menu-section hidden space-y-6">
+            <div class="menu-item pb-4 flex justify-between">
+                <div>
+                    <h4 class="font-bold uppercase tracking-tight text-white">Classic Shisha</h4>
+                    <p class="text-xs text-gray-500">Mint, Grape, Double Apple, Watermelon</p>
+                </div>
+                <div class="text-amber-500">₦15,000</div>
+            </div>
+            <div class="menu-item pb-4 flex justify-between">
+                <div>
+                    <h4 class="font-bold uppercase tracking-tight text-white">Premium Mix</h4>
+                    <p class="text-xs text-gray-500">Cálido Special Blend - Ask for flavors</p>
+                </div>
+                <div class="text-amber-500">₦22,000</div>
+            </div>
+            <div class="p-4 border border-amber-500/30 bg-amber-500/5 rounded-xl">
+                <p class="text-[10px] text-amber-200 uppercase tracking-widest text-center">Available in the Lounge & Rooftop Terrace</p>
+            </div>
+        </div>
         <div class="mt-12 text-center text-[10px] text-gray-600 tracking-widest uppercase">
             + 10% Service Charge & 7.5% VAT
         </div>
